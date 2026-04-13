@@ -38,7 +38,7 @@ export function Navbar() {
           )}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          WESTBROOK
+          WESTBROOK CONSTRUCTION
         </div>
 
         {/* Desktop Nav */}

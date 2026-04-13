@@ -84,22 +84,29 @@ export function Hero() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="relative z-10 w-full max-w-[500px] aspect-[4/3] overflow-hidden shadow-sm border border-neutral-grey/10 bg-white"
+            className="relative z-10 w-full max-w-[500px] aspect-[4/3] overflow-hidden"
           >
             {[0, 1, 2, 3].map((index) => (
               <motion.div
                 key={index}
                 variants={pieceVariants}
-                className="absolute top-0 bottom-0 border-r border-neutral-cream/10 last:border-r-0"
+                className="absolute top-0 bottom-0 overflow-hidden"
                 style={{
                   left: `${index * 25}%`,
                   width: '25%',
-                  backgroundImage: 'url(/logo/main.jpeg)',
-                  backgroundSize: '400% 100%',
-                  backgroundPosition: `${(index / 3) * 100}% 50%`,
-                  backgroundRepeat: 'no-repeat',
                 }}
-              />
+              >
+                <img 
+                  src="/logo/main.jpeg" 
+                  alt="Westbrook Construction Logo" 
+                  className="absolute top-0 h-full max-w-none object-cover"
+                  style={{
+                    width: '400%',
+                    left: `-${index * 100}%`,
+                  }}
+                  referrerPolicy="no-referrer"
+                />
+              </motion.div>
             ))}
           </motion.div>
         </div>

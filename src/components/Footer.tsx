@@ -19,7 +19,7 @@ export function Footer() {
           {/* Logo & Copyright */}
           <div className="flex flex-col gap-6">
             <div>
-              <div className="text-[24px] font-heading tracking-wide">WESTBROOK</div>
+              <div className="text-[24px] font-heading tracking-wide">WESTBROOK CONSTRUCTION</div>
               <div className="w-[32px] h-[1px] bg-neutral-bronze mt-2" />
             </div>
             <p className="text-[14px] text-neutral-cream/70 max-w-[250px]">
