@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Crimson Pro", ui-serif, Georgia, serif;
+
+  --color-primary-dark: #0E2F12;
+  --color-primary-light: #5DAE5F;
+  --color-secondary-blue: #2F5061;
+  --color-secondary-sand: #DCC6AF;
+  --color-neutral-cream: #FCFBF7;
+  --color-neutral-grey: #998C83;
+  --color-neutral-slate: #475C52;
+  --color-neutral-bronze: #B08855;
+
+  /* Spacing scale: 8 / 16 / 24 / 32 / 48 / 64 / 96 */
+  --spacing-2: 0.5rem;   /* 8px */
+  --spacing-4: 1rem;     /* 16px */
+  --spacing-6: 1.5rem;   /* 24px */
+  --spacing-8: 2rem;     /* 32px */
+  --spacing-12: 3rem;    /* 48px */
+  --spacing-16: 4rem;    /* 64px */
+  --spacing-24: 6rem;    /* 96px */
+}
+
+@layer base {
+  body {
+    @apply bg-neutral-cream text-primary-dark font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-normal;
+  }
+
+  p {
+    @apply max-w-[75ch];
+  }
+}

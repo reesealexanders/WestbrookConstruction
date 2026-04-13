@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/content/home.json"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - {label: "Hero Title", name: "heroTitle", widget: "string"}
+          - {label: "Hero Subtitle", name: "heroSubtitle", widget: "text"}
+          - {label: "Process Section Title", name: "processTitle", widget: "string"}
+          - {label: "Spaces Section Title", name: "spacesTitle", widget: "string"}
+          - {label: "Trust Section Title", name: "trustTitle", widget: "string"}
+          - {label: "Projects Section Title", name: "projectsTitle", widget: "string"}
+          - {label: "Contact Section Title", name: "contactTitle", widget: "string"}
+  - name: "projects"
+    label: "Projects"
+    folder: "src/content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
