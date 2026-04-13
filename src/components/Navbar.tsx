@@ -33,12 +33,19 @@ export function Navbar() {
       <div className="max-w-[1200px] mx-auto px-6 lg:px-[96px] flex items-center justify-between">
         <div 
           className={cn(
-            "text-[22px] font-heading font-bold tracking-wide cursor-pointer transition-colors",
+            "flex items-center gap-3 cursor-pointer transition-colors",
             isScrolled ? "text-neutral-cream" : "text-primary-dark"
           )}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          WESTBROOK CONSTRUCTION
+          <img 
+            src="/logo/logo.jpg" 
+            alt="Logo" 
+            className="w-8 h-8 object-contain"
+          />
+          <span className="text-[22px] font-heading font-bold tracking-wide">
+            WESTBROOK CONSTRUCTION
+          </span>
         </div>
 
         {/* Desktop Nav */}

@@ -18,9 +18,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Logo & Copyright */}
           <div className="flex flex-col gap-6">
-            <div>
-              <div className="text-[24px] font-heading tracking-wide">WESTBROOK CONSTRUCTION</div>
-              <div className="w-[32px] h-[1px] bg-neutral-bronze mt-2" />
+            <div className="flex items-center gap-3">
+              <img 
+                src="/logo/logo.jpg" 
+                alt="Logo" 
+                className="w-10 h-10 object-contain brightness-0 invert"
+              />
+              <div>
+                <div className="text-[20px] font-heading tracking-wide">WESTBROOK CONSTRUCTION</div>
+                <div className="w-[32px] h-[1px] bg-neutral-bronze mt-1" />
+              </div>
             </div>
             <p className="text-[14px] text-neutral-cream/70 max-w-[250px]">
               Structured renovation systems for quality-first homeowners.

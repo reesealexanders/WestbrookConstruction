@@ -94,19 +94,13 @@ export function Hero() {
                 style={{
                   left: `${index * 25}%`,
                   width: '25%',
+                  backgroundImage: 'url("/logo/logo.jpg")',
+                  backgroundSize: '400% 100%',
+                  backgroundPosition: `${(index / 3) * 100}% 50%`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundColor: '#f3f4f6',
                 }}
-              >
-                <img 
-                  src="/logo/main.jpeg" 
-                  alt="Westbrook Construction Logo" 
-                  className="absolute top-0 h-full max-w-none object-cover"
-                  style={{
-                    width: '400%',
-                    left: `-${index * 100}%`,
-                  }}
-                  referrerPolicy="no-referrer"
-                />
-              </motion.div>
+              />
             ))}
           </motion.div>
         </div>
