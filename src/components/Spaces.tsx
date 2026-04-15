@@ -65,30 +65,30 @@ export function Spaces() {
               key={space.id}
               className={cn(
                 "group relative aspect-[4/3] flex flex-col justify-end p-8",
-                "bg-neutral-cream transition-colors duration-300 hover:bg-primary-dark cursor-default overflow-hidden"
+                "bg-neutral-cream transition-colors duration-300 md:hover:bg-primary-dark overflow-hidden"
               )}
             >
               {/* Bronze top accent bar */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-neutral-bronze opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-neutral-bronze opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" />
               
               {/* Index Number */}
-              <div className="absolute top-6 left-8 text-[12px] font-medium tracking-widest text-neutral-grey/40 group-hover:text-neutral-cream/40 transition-colors duration-300">
+              <div className="absolute top-6 left-8 text-[12px] font-medium tracking-widest text-neutral-grey/40 md:group-hover:text-neutral-cream/40 transition-colors duration-300">
                 {(index + 1).toString().padStart(2, '0')}
               </div>
 
               <div className="relative z-10">
-                <h4 className="text-[26px] font-heading text-primary-dark group-hover:text-neutral-cream transition-colors duration-300 mb-2">
+                <h4 className="text-[26px] font-heading text-primary-dark md:group-hover:text-neutral-cream transition-colors duration-300 mb-2">
                   {space.title}
                 </h4>
-                <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-300 ease-in-out">
-                  <p className="overflow-hidden text-[15px] text-neutral-cream/70 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                <div className="grid grid-rows-[1fr] md:grid-rows-[0fr] md:group-hover:grid-rows-[1fr] transition-all duration-300 ease-in-out">
+                  <p className="overflow-hidden text-[15px] text-neutral-slate md:text-neutral-cream/70 leading-relaxed opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 delay-100">
                     {space.description}
                   </p>
                 </div>
               </div>
               
               {/* Corner accent mark */}
-              <div className="absolute bottom-6 right-6 w-4 h-4 border-b border-r border-neutral-bronze opacity-30 group-hover:opacity-80 transition-opacity duration-300" />
+              <div className="absolute bottom-6 right-6 w-4 h-4 border-b border-r border-neutral-bronze opacity-30 md:group-hover:opacity-80 transition-opacity duration-300" />
             </div>
           ))}
         </div>
