@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Button } from './ui/Button';
-import logo from '../assets/westbrook-logo.jpg';
+
+const logo = '/westbrook-logo.jpg';
 
 export function Hero() {
   const containerVariants = {
