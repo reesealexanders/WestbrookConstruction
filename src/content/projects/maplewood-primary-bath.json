@@ -1,0 +1,11 @@
+{
+  "title": "Maplewood Primary Bath",
+  "date": "2024-02-15T12:00:00Z",
+  "description": "Expansion and modernization with heated stone flooring.",
+  "image": "https://picsum.photos/seed/bathroom-modern/800/600",
+  "summary": "We transformed a cramped master bathroom into a spa-like retreat. The renovation included expanding the footprint by 40 square feet, installing a wet room with a soaking tub and rainfall shower, and adding custom walnut vanities with integrated lighting.",
+  "gallery": [
+    { "image": "https://picsum.photos/seed/bath-1/800/600" },
+    { "image": "https://picsum.photos/seed/bath-2/800/600" }
+  ]
+}

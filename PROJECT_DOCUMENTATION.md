@@ -13,6 +13,7 @@ This project is a modern marketing website built with React, Vite, and Tailwind 
 - [x] **Stage 7**: Contact Form & Footer
 
 ## Changelog
+- **Showcase & CMS**: Fleshed out the Showcase section to support a dynamic gallery. Implemented a "See More" button that navigates to a dedicated Showcase page (`/showcase`) displaying all historical projects. Added a detailed project modal with image gallery navigation and project summaries. Integrated Decap CMS with a `projects` collection (JSON format) to allow users to manage showcase items. Implemented cross-page navigation with hash scroll support in the Navbar and Footer. Added `react-router-dom` for application routing.
 - **Stage 7**: Added the Contact Form section with a 600px max-width single-column layout, form fields, and an inline success confirmation state. Added the Footer with logo, navigation, contact info, service area, and the required copyright text. Both sections utilize a subtle 5% opacity geometric background pattern.
 - **Stage 6**: Added the Trust (Why Westbrook) section with a split layout and 3 core points. Implemented the Projects section with a controlled grid of 3 projects and minimal hover effects. Added the Pricing/Expectations section using a document-style layout inside a framed container.
 - **Stage 5**: Implemented the Process section with a horizontal 5-step click-based system for desktop and a vertical accordion for mobile. Added the Spaces section with a 2x3 grid of bordered project frames and minimal hover effects.
@@ -25,8 +26,8 @@ This project is a modern marketing website built with React, Vite, and Tailwind 
 ### Architecture
 - **Framework**: React 19 (Single Page Application)
 - **Build Tool**: Vite
+- **Routing**: React Router Dom (v7)
 - **Styling**: Tailwind CSS (v4)
-- **Routing**: React Router (if needed, otherwise single-page scroll)
 - **State Management**: React Hooks
 
 ### File Structure

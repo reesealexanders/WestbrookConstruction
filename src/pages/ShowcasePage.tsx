@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ChevronRight, ChevronLeft, Maximize2 } from 'lucide-react';
+import { X, ChevronRight, ChevronLeft, Maximize2, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Button } from './ui/Button';
+import { Button } from '../components/ui/Button';
 import { cn } from '../lib/utils';
+import { Navbar } from '../components/Navbar';
+import { Footer } from '../components/Footer';
 
 interface Project {
   title: string;
@@ -14,7 +16,7 @@ interface Project {
   gallery: { image: string }[];
 }
 
-export function Projects() {
+export default function ShowcasePage() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -25,9 +27,8 @@ export function Projects() {
       .map((file: any) => file.default as Project)
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
     setProjects(loadedProjects);
+    window.scrollTo(0, 0);
   }, []);
-
-  const displayedProjects = projects.slice(0, 3);
 
   const openProject = (project: Project) => {
     setSelectedProject(project);
@@ -55,25 +56,33 @@ export function Projects() {
   const allImages = selectedProject ? [selectedProject.image, ...selectedProject.gallery.map(g => g.image)] : [];
 
   return (
-    <section className="w-full max-w-[1200px] mx-auto px-6 lg:px-[96px] py-16 lg:py-24">
-      <div className="mb-12">
-        <h2 className="text-neutral-bronze uppercase tracking-[0.2em] text-[13px] font-sans font-medium mb-4">Showcase</h2>
-        <h3 className="text-[38px] lg:text-[48px] leading-[1.1] font-heading text-primary-dark max-w-[15ch]">
-          Controlled execution, exceptional results.
-        </h3>
-      </div>
+    <main className="min-h-screen bg-neutral-cream">
+      <Navbar />
+      
+      <section className="w-full max-w-[1200px] mx-auto px-6 lg:px-[96px] pt-32 pb-24">
+        <div className="mb-12">
+          <Link 
+            to="/#showcase" 
+            className="inline-flex items-center text-neutral-bronze hover:text-primary-dark transition-colors mb-8 group"
+          >
+            <ArrowLeft className="mr-2 w-4 h-4 transition-transform group-hover:-translate-x-1" />
+            Back to Home
+          </Link>
+          
+          <h2 className="text-neutral-bronze uppercase tracking-[0.2em] text-[13px] font-sans font-medium mb-4">Full Portfolio</h2>
+          <h1 className="text-[42px] lg:text-[52px] leading-[1.1] font-heading text-primary-dark max-w-[20ch]">
+            Historical projects and structural transformations.
+          </h1>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <AnimatePresence mode="popLayout">
-          {displayedProjects.map((project, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
             <motion.div 
-              layout
               key={project.title}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="group border border-neutral-grey/20 bg-neutral-cream transition-all duration-300 hover:shadow-xl hover:border-neutral-bronze/30 cursor-pointer flex flex-col h-full"
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="group border border-neutral-grey/20 bg-white transition-all duration-300 hover:shadow-xl hover:border-neutral-bronze/30 cursor-pointer flex flex-col h-full"
               onClick={() => openProject(project)}
             >
               <div className="aspect-[4/3] overflow-hidden border-b border-neutral-grey/20 relative">
@@ -88,31 +97,22 @@ export function Projects() {
                 </div>
               </div>
               <div className="p-8 flex-grow flex flex-col">
+                <div className="text-neutral-bronze text-[12px] font-medium uppercase tracking-wider mb-2">
+                  {new Date(project.date).getFullYear()}
+                </div>
                 <h4 className="text-[22px] font-heading text-primary-dark mb-3 group-hover:text-neutral-bronze transition-colors">{project.title}</h4>
                 <p className="text-[15px] text-neutral-slate leading-relaxed mb-6">{project.description}</p>
                 <div className="mt-auto flex items-center text-[13px] font-medium text-neutral-bronze uppercase tracking-wider">
-                  View Details
+                  View Case Study
                   <ChevronRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
             </motion.div>
           ))}
-        </AnimatePresence>
-      </div>
-
-      {projects.length > 3 && (
-        <div className="mt-16 flex justify-center">
-          <Link to="/showcase">
-            <Button 
-              variant="secondary" 
-              className="group"
-            >
-              See More Projects
-              <ChevronRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </Link>
         </div>
-      )}
+      </section>
+
+      <Footer />
 
       {/* Project Detail Modal */}
       <AnimatePresence>
@@ -139,7 +139,6 @@ export function Projects() {
                 <X size={24} />
               </button>
 
-              {/* Gallery Section */}
               <div className="w-full lg:w-2/3 relative bg-neutral-grey/10 flex items-center justify-center overflow-hidden group/gallery">
                 <AnimatePresence mode="wait">
                   <motion.img
@@ -186,7 +185,6 @@ export function Projects() {
                 )}
               </div>
 
-              {/* Content Section */}
               <div className="w-full lg:w-1/3 p-8 md:p-12 overflow-y-auto bg-white border-l border-neutral-grey/10">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-[20px] h-[1.5px] bg-neutral-bronze" />
@@ -218,18 +216,17 @@ export function Projects() {
                 </div>
 
                 <div className="mt-12">
-                  <Button variant="primary" className="w-full" onClick={() => {
-                    closeProject();
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                  }}>
-                    Inquire About Similar Project
-                  </Button>
+                  <Link to="/#contact" onClick={closeProject}>
+                    <Button variant="primary" className="w-full">
+                      Inquire About Similar Project
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
           </div>
         )}
       </AnimatePresence>
-    </section>
+    </main>
   );
 }

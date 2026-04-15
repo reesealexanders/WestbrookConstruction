@@ -1,25 +1,25 @@
 import { motion } from 'motion/react';
 import { Button } from './ui/Button';
+import logo from '../assets/westbrook-logo.jpg';
 
 export function Hero() {
   const containerVariants = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.25,
+        staggerChildren: 0.2,
       }
     }
   };
 
   const pieceVariants = {
-    hidden: { opacity: 0, y: 24 },
+    hidden: { opacity: 0, y: 30 },
     visible: { 
       opacity: 1, 
-      y: [24, 2, 0],
+      y: 0,
       transition: { 
         duration: 0.8,
-        ease: ["easeOut", "linear"],
-        times: [0, 0.85, 1]
+        ease: "easeOut"
       } 
     }
   };
@@ -35,7 +35,7 @@ export function Hero() {
     <section className="w-full max-w-[1200px] mx-auto px-6 lg:px-[96px] pt-12 lg:pt-24 pb-16">
       <div className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-[24px] items-center">
         
-        {/* Left: Text Content (40-45%) -> 5/12 = 41.6% */}
+        {/* Left: Text Content */}
         <div className="col-span-4 md:col-span-4 lg:col-span-5 flex flex-col gap-6 order-last lg:order-first mt-8 lg:mt-0">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -78,29 +78,38 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Right: Logo Animation (55-60%) -> 7/12 = 58.3% */}
+        {/* Right: Logo */}
         <div className="col-span-4 md:col-span-4 lg:col-span-7 flex justify-center lg:justify-end order-first lg:order-last relative">
           <motion.div 
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="relative z-10 w-full max-w-[500px] aspect-[4/3] overflow-hidden"
+            className="relative z-10 w-full max-w-[500px] flex items-center justify-center"
           >
+            {/* Invisible placeholder to establish natural height */}
+            <img 
+              src={logo} 
+              alt="Westbrook Construction Logo"
+              className="w-full h-auto invisible"
+            />
+
+            {/* Slices */}
             {[0, 1, 2, 3].map((index) => (
               <motion.div
                 key={index}
                 variants={pieceVariants}
-                className="absolute top-0 bottom-0 overflow-hidden"
+                className="absolute inset-0"
                 style={{
-                  left: `${index * 25}%`,
-                  width: '25%',
-                  backgroundImage: 'url("/logo/logo.jpg")',
-                  backgroundSize: '400% 100%',
-                  backgroundPosition: `${(index / 3) * 100}% 50%`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundColor: '#f3f4f6',
+                  clipPath: `inset(0 ${100 - (index + 1) * 25}% 0 ${index * 25}%)`
                 }}
-              />
+              >
+                <img 
+                  src={logo} 
+                  alt=""
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              </motion.div>
             ))}
           </motion.div>
         </div>

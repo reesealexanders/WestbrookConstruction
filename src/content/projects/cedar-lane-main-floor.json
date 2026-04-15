@@ -1,0 +1,11 @@
+{
+  "title": "Cedar Lane Main Floor",
+  "date": "2024-01-20T12:00:00Z",
+  "description": "Open-concept integration of living, dining, and entry spaces.",
+  "image": "https://picsum.photos/seed/living-space/800/600",
+  "summary": "This main floor renovation focused on creating a cohesive aesthetic across the entry, living, and dining rooms. We installed wide-plank European oak flooring throughout, updated all trim and molding, and designed a custom fireplace surround with Venetian plaster finish.",
+  "gallery": [
+    { "image": "https://picsum.photos/seed/living-1/800/600" },
+    { "image": "https://picsum.photos/seed/living-2/800/600" }
+  ]
+}

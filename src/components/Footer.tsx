@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export function Footer() {
   return (
     <footer className="w-full bg-primary-dark text-neutral-cream relative overflow-hidden">
@@ -18,12 +20,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Logo & Copyright */}
           <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-3">
-              <img 
-                src="/logo/logo.jpg" 
-                alt="Logo" 
-                className="w-10 h-10 object-contain brightness-0 invert"
-              />
+            <div className="flex items-center">
               <div>
                 <div className="text-[20px] font-heading tracking-wide">WESTBROOK CONSTRUCTION</div>
                 <div className="w-[32px] h-[1px] bg-neutral-bronze mt-1" />
@@ -37,10 +34,10 @@ export function Footer() {
           {/* Navigation */}
           <div className="flex flex-col gap-4">
             <h4 className="text-neutral-bronze/80 uppercase tracking-[0.2em] text-[11px] font-medium mb-2">Navigation</h4>
-            <a href="#about" className="text-[14px] text-neutral-cream/65 hover:text-neutral-cream transition-colors">About</a>
-            <a href="#services" className="text-[14px] text-neutral-cream/65 hover:text-neutral-cream transition-colors">Services</a>
-            <a href="#showcase" className="text-[14px] text-neutral-cream/65 hover:text-neutral-cream transition-colors">Showcase</a>
-            <a href="#process" className="text-[14px] text-neutral-cream/65 hover:text-neutral-cream transition-colors">Process</a>
+            <Link to="/#about" className="text-[14px] text-neutral-cream/65 hover:text-neutral-cream transition-colors">About</Link>
+            <Link to="/#services" className="text-[14px] text-neutral-cream/65 hover:text-neutral-cream transition-colors">Services</Link>
+            <Link to="/#showcase" className="text-[14px] text-neutral-cream/65 hover:text-neutral-cream transition-colors">Showcase</Link>
+            <Link to="/#process" className="text-[14px] text-neutral-cream/65 hover:text-neutral-cream transition-colors">Process</Link>
           </div>
 
           {/* Contact Info */}

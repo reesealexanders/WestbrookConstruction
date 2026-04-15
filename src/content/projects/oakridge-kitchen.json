@@ -1,0 +1,12 @@
+{
+  "title": "Oakridge Kitchen",
+  "date": "2024-03-01T12:00:00Z",
+  "description": "Complete structural reconfiguration and custom millwork.",
+  "image": "https://picsum.photos/seed/kitchen-renovation/800/600",
+  "summary": "This project involved a complete gut renovation of a 1980s kitchen. We removed a load-bearing wall to create an open-concept flow into the dining area. Custom white oak cabinetry was installed along with Taj Mahal quartzite countertops and a hidden pantry door.",
+  "gallery": [
+    { "image": "https://picsum.photos/seed/kitchen-1/800/600" },
+    { "image": "https://picsum.photos/seed/kitchen-2/800/600" },
+    { "image": "https://picsum.photos/seed/kitchen-3/800/600" }
+  ]
+}

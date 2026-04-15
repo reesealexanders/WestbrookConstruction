@@ -1,0 +1,11 @@
+{
+  "title": "Westside Modern Addition",
+  "date": "2023-12-05T12:00:00Z",
+  "description": "2,000 sq ft contemporary addition with floor-to-ceiling glass.",
+  "image": "https://picsum.photos/seed/modern-addition/800/600",
+  "summary": "This ambitious addition added a massive master suite and a second-story home office to a mid-century modern home. We matched the original architectural language while introducing modern energy-efficient systems and premium finishes like Shou Sugi Ban siding.",
+  "gallery": [
+    { "image": "https://picsum.photos/seed/addition-1/800/600" },
+    { "image": "https://picsum.photos/seed/addition-2/800/600" }
+  ]
+}

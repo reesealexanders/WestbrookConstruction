@@ -23,9 +23,19 @@ collections:
   - name: "projects"
     label: "Projects"
     folder: "src/content/projects"
+    extension: "json"
+    format: "json"
     create: true
     slug: "{{slug}}"
+    sortable_fields: ["date", "title"]
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "string", hint: "Short description for the card"}
+      - {label: "Main Image", name: "image", widget: "image"}
+      - {label: "Summary", name: "summary", widget: "text", hint: "Detailed summary shown in the modal"}
+      - label: "Gallery"
+        name: "gallery"
+        widget: "list"
+        fields:
+          - {label: "Image", name: "image", widget: "image"}
